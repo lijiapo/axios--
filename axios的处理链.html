@@ -11,11 +11,12 @@
 
 <body>
     <script>
-        // 添加请求拦截器
-        axios.interceptors.request.use(function(config) {
+        // 添加请求拦截器  拦截器是回调函数
+        axios.interceptors.request.use(config => {
             // 在发送请求之前做些什么
+            console.log('resquest interceptor1');
             return config;
-        }, function(error) {
+        }, error => {
             // 对请求错误做些什么
             return Promise.reject(error);
         });
